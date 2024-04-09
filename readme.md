@@ -1,7 +1,9 @@
-# Idea23D
-The code is being organized and will be released in the next few weeks~
+# Idea23D: Collaborative LMM Agents Enable 3D Model Generation from Interleaved Multimodal Inputs
 
-Showcase case available at: https://air-discover.github.io/Idea-2-3D/
+The code will be uploaded within a week, just wait a little while~
+
+## [Project Page](https://air-discover.github.io/Idea-2-3D/) | [![GitHub Repo Stars](https://img.shields.io/github/stars/yisuanwang/Idea23D?label=stars&logo=github&color=brightgreen)](https://github.com/yisuanwang/Idea23D) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/xxxxxxxxxxxx) | [![arXiv](https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2404.04363)
+
 
 ----
 ## Introduction
@@ -35,7 +37,7 @@ https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0
 
 This section in [ipynb](./idea23d_pipeline.ipynb):
 ```
-# 初始化LMM,T2I,I23D
+# init LMM,T2I,I23D
 log('loading lmm...')
 
 # lmm = lmm_gpt4v('sk-your open ai key')
