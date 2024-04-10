@@ -1,7 +1,3 @@
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Gradient Text Example</title>
 <style>
 .gradient-text {
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
@@ -10,8 +6,6 @@
   background-clip: text;
 }
 </style>
-</head>
-<body>
 
 <h1 style="font-weight: bold">
   <a href="https://air-discover.github.io/Idea-2-3D/" target="_blank">
@@ -20,8 +14,6 @@
   </a>
 </h1>
 
-</body>
-</html>
 
 
 ## [🗂Project Page](https://air-discover.github.io/Idea-2-3D/) | [![GitHub Repo Stars](https://img.shields.io/github/stars/yisuanwang/Idea23D?label=stars&logo=github&color=brightgreen)](https://github.com/yisuanwang/Idea23D) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing) | [![arXiv](https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2404.04363)
