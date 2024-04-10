@@ -1,9 +1,9 @@
 
 <h1 style="font-weight: bold">
-  <a href="https://air-discover.github.io/Idea-2-3D/" target="_blank">
+  <!-- <a href="https://air-discover.github.io/Idea-2-3D/" target="_blank"> -->
     <span style="background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); -webkit-background-clip: text; color: transparent; background-clip: text;">Idea-2-3D</span>:
     Collaborative LMM Agents Enable 3D Model Generation from Interleaved Multimodal Inputs
-  </a>
+  <!-- </a> -->
 </h1>
 
 
