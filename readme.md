@@ -6,10 +6,16 @@
   <!-- </a> -->
 </h1>
 
-
+---
 
 ## [🗂Project Page](https://air-discover.github.io/Idea-2-3D/) | [![GitHub Repo Stars](https://img.shields.io/github/stars/yisuanwang/Idea23D?label=stars&logo=github&color=brightgreen)](https://github.com/yisuanwang/Idea23D) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing) | [![arXiv](https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2404.04363)
 
+<a href="https://scholar.google.com/citations?hl=en&user=uVMnzPMAAAAJ" target="_blank">Junhao Chen, </a>
+<a href="https://scholar.google.com/citations?hl=en&user=_wyYvQsAAAAJ" target="_blank">Xiang Li, </a>
+<a href="https://scholar.google.com/citations?user=BKMYsm4AAAAJ&hl=en" target="_blank">Xiaojun Ye, </a>
+<a href="https://scholar.google.com/citations?hl=en&user=WvbKfLgAAAAJ" target="_blank">Chao Li<Link></Link>, </a>
+<a href="https://scholar.google.com/citations?user=JHvyYDQAAAAJ" target="_blank">Zhaoxin Fan, </a>
+<a href="https://scholar.google.com/citations?hl=en&user=ygQznUQAAAAJ" target="_blank">Hao Zhao </a>
 
 ----
 ## ✨Introduction
