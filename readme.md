@@ -15,9 +15,9 @@
 ## ✨Introduction
 Based on the Multimodal Big Model we developed Idea23D, a multimodal iterative self-refinement system that enhances any T2I model for automatic 3D model design and generation, enabling various new image creation functionalities togther with better visual qualities while understanding high level multimodal inputs.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;">
-  <video src="./page/teaser.mp4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls></video>
-</div>
+
+![idea23d](./page/idea23d.gif)
+
 
 ## 📔Prerequisites:
 - LMM: prepare the [OpenAI GPT-4V API key](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), or use another open source LMM (e.g., [LLaVA](https://github.com/haotian-liu/LLaVA), [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary)).
