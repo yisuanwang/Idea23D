@@ -19,7 +19,7 @@
 
 ----
 ## ✨Introduction
-Based on the Multimodal Big Model we developed Idea23D, a multimodal iterative self-refinement system that enhances any T2I model for automatic 3D model design and generation, enabling various new image creation functionalities togther with better visual qualities while understanding high level multimodal inputs.
+Based on the LMM we developed Idea23D, a multimodal iterative self-refinement system that enhances any T2I model for automatic 3D model design and generation, enabling various new image creation functionalities togther with better visual qualities while understanding high level multimodal inputs.
 
 
 ![idea23d](./page/idea23d.gif)
