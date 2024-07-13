@@ -114,3 +114,7 @@ We have intensively borrow codes from the following repositories. Many thanks to
 [Wonder3D](https://github.com/xxlong0/Wonder3D),
 [SD-XL](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl),
 [Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if)
+
+## ⭐️ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yisuanwang/Idea23D&type=Date)](https://star-history.com/#yisuanwang/Idea23D&Date)
