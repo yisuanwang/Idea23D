@@ -1,23 +1,28 @@
 
 <h1 style="font-weight: bold">
-  <!-- <a href="https://air-discover.github.io/Idea-2-3D/" target="_blank"> -->
-    <span style="background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); -webkit-background-clip: text; color: transparent; background-clip: text;">Idea-2-3D</span>:
+  <!-- <a href="https://idea23d.github.io/" target="_blank"> -->
+     <span style="background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); -webkit-background-clip: text; color: transparent; background-clip: text;">Idea23D</span>:
     Collaborative LMM Agents Enable 3D Model Generation from Interleaved Multimodal Inputs
   <!-- </a> -->
 </h1>
 
----
+<div align="left">
+  <!-- <a href='https://idea23d.github.io/'>
+    <img src='https://img.shields.io/badge/Project-Page-green' alt="Project Page">
+  </a>&ensp; -->
+  <a href="https://idea23d.github.io/"><img src="https://img.shields.io/static/v1?label=Homepage&message=Idea23D&color=blue&logo=github-pages"></a> &ensp;
+  <a href="https://github.com/yisuanwang/Idea23D"><img src="https://img.shields.io/github/stars/yisuanwang/Idea23D?label=stars&logo=github&color=brightgreen" alt="GitHub Repo Stars"></a> &ensp;
+  <a href="https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> &ensp;
+  <a href="https://arxiv.org/abs/2404.04363"><img src="https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square" alt="arXiv"></a> &ensp;
+</div>
 
-## 📰 News: Our paper has been accepted by COLING 2025! 🎉
 
-## [🗂Project Page](https://air-discover.github.io/Idea-2-3D/) | [![GitHub Repo Stars](https://img.shields.io/github/stars/yisuanwang/Idea23D?label=stars&logo=github&color=brightgreen)](https://github.com/yisuanwang/Idea23D) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing) | [![arXiv](https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2404.04363)
-
-<a href="https://scholar.google.com/citations?hl=en&user=uVMnzPMAAAAJ" target="_blank">Junhao Chen, </a>
-<a href="https://scholar.google.com/citations?hl=en&user=_wyYvQsAAAAJ" target="_blank">Xiang Li, </a>
-<a href="https://scholar.google.com/citations?user=BKMYsm4AAAAJ&hl=en" target="_blank">Xiaojun Ye, </a>
-<a href="https://scholar.google.com/citations?hl=en&user=WvbKfLgAAAAJ" target="_blank">Chao Li<Link></Link>, </a>
-<a href="https://scholar.google.com/citations?user=JHvyYDQAAAAJ" target="_blank">Zhaoxin Fan, </a>
-<a href="https://scholar.google.com/citations?hl=en&user=ygQznUQAAAAJ" target="_blank">Hao Zhao </a>
+<a href="https://scholar.google.com/citations?hl=en&user=uVMnzPMAAAAJ" target="_blank">Junhao Chen *</a>,
+<a href="https://scholar.google.com/citations?hl=en&user=_wyYvQsAAAAJ" target="_blank">Xiang Li *</a>,
+<a href="https://scholar.google.com/citations?user=BKMYsm4AAAAJ&hl=en" target="_blank">Xiaojun Ye</a>,
+<a href="" target="_blank">Chao Li</a>,
+<a href="https://scholar.google.com/citations?user=JHvyYDQAAAAJ" target="_blank">Zhaoxin Fan †</a>,
+<a href="https://scholar.google.com/citations?hl=en&user=ygQznUQAAAAJ" target="_blank">Hao Zhao †</a>
 
 ----
 ## ✨Introduction
@@ -104,6 +109,7 @@ If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get
   primaryClass={cs.CV}
 }
 ```
+
 
 ## 🧰Acknowledgement
 We have intensively borrow codes from the following repositories. Many thanks to the authors for sharing their codes.
