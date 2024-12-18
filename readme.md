@@ -6,6 +6,8 @@
   <!-- </a> -->
 </h1>
 
+2024.11: 🎉 Idea-2-3D has been accepted by COLING 2025! 🎉 See you in Abu Dhabi, UAE, from January 19 to 24, 2025!
+
 <div align="left">
   <!-- <a href='https://idea23d.github.io/'>
     <img src='https://img.shields.io/badge/Project-Page-green' alt="Project Page">
@@ -25,36 +27,57 @@
 <a href="https://scholar.google.com/citations?hl=en&user=ygQznUQAAAAJ" target="_blank">Hao Zhao †</a>
 
 ----
+
 ## ✨Introduction
+<!-- ![idea23d](./page/idea23d.gif) -->
+![idea23d](./page/overview11.jpg)
 Based on the LMM we developed Idea23D, a multimodal iterative self-refinement system that enhances any T2I model for automatic 3D model design and generation, enabling various new image creation functionalities togther with better visual qualities while understanding high level multimodal inputs.
 
 
-![idea23d](./page/idea23d.gif)
+## 📔Compatibility:
+- LMM Agent:
+[OpenAI GPT-4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), 
+[OpenAI GPT-4o](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), 
+[llava-v1.6-34b](https://github.com/haotian-liu/LLaVA),
+[llava-v1.6-mistral-7b](https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b), 
+[llava-CoT-11B](https://github.com/PKU-YuanGroup/LLaVA-CoT),
+[InternVL2.5-78B](https://huggingface.co/OpenGVLab/InternVL2_5-78B),
+[Qwen-VL2-8B](https://github.com/QwenLM/Qwen2-VL), 
+[llava-CoT-11B](https://huggingface.co/Xkev/Llama-3.2V-11B-cot),
+[llama-3.2V-11B](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision), 
+[intern-VL2-8B](https://huggingface.co/OpenGVLab/InternVL2-8B),
 
+- Text-2-Image Agent: 
+[SD-XL 1.0 base+refiner](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl), 
+[DALL·E](https://platform.openai.com/docs/guides/images?context=node), 
+[Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if),
+[FLUX.1.dev](https://huggingface.co/black-forest-labs/FLUX.1-dev),
 
-## 📔Prerequisites:
-- LMM: prepare the [OpenAI GPT-4V API key](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), or use another open source LMM (e.g., [LLaVA](https://github.com/haotian-liu/LLaVA), [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary)).
-
-- Text-2-Image model: use [SD-XL](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl), [DALL·E](https://platform.openai.com/docs/guides/images?context=node), or [Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if).
-
-- Image-2-3D model: use [TripoSR](https://github.com/VAST-AI-Research/TripoSR), [Zero123](https://github.com/cvlab-columbia/zero123), [Stable Zero123](https://github.com/threestudio-project/threestudio?tab=readme-ov-file#stable-zero123), or [Wonder3D](https://github.com/xxlong0/Wonder3D)
+- Image-2-3D Agent: 
+[TripoSR](https://github.com/VAST-AI-Research/TripoSR), 
+[Zero123](https://github.com/cvlab-columbia/zero123), 
+[Wonder3D](https://github.com/xxlong0/Wonder3D),
+[InstantMesh](https://github.com/TencentARC/InstantMesh), 
+[LGM](https://github.com/3DTopia/LGM), 
+[Hunyuan3D](https://github.com/Tencent/Hunyuan3D-1), 
+[stable-fast-3d](https://huggingface.co/stabilityai/stable-fast-3d), 3DTopia, Hunyuan3D
 
 ## 🛠Run
-❗If different modules are used, install the corresponding dependency packages.
+<!-- ❗If different modules are used, install the corresponding dependency packages.
 
 The code we have given to run locally uses llava-1.6, SD-XL and TripoSR. so [requirements-local.txt](./requirements-local.txt) is following that.
 
-It's driven by GPT4V, [SD-XL(replicate)](https://replicate.com/stability-ai/sdxl/api), and TripoSR if you're using colab for testing, it uses this [requirements-colab.txt](./requirements-colab.txt).
+It's driven by GPT4V, [SD-XL(replicate)](https://replicate.com/stability-ai/sdxl/api), and TripoSR if you're using colab for testing, it uses this [requirements-colab.txt](./requirements-colab.txt). -->
 
 ### Colab
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing)
+<!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing) -->
 
 ### Offline
-```
+<!-- ```
 pip install -r requirements-local.txt
-```
+``` -->
 
-Then change the path to your path in the "Initialize LMM, T2I, I23D" section of ipynb.
+<!-- Then change the path to your path in the "Initialize LMM, T2I, I23D" section of ipynb.
 ```
 https://huggingface.co/llava-hf/llava-v1.6-34b-hf
 https://huggingface.co/stabilityai/TripoSR
@@ -81,24 +104,24 @@ log('loading i23d...')
 i23d = img23d_TripoSR(model_path = 'path_to_your/TripoSR' ,gpuid=2)
 log('loading finish.')
 ```
-open [Idea23D/idea23d_pipeline.ipynb](./idea23d_pipeline.ipynb), Explore freely in the notebook ~ 
+open [Idea23D/idea23d_pipeline.ipynb](./idea23d_pipeline.ipynb), Explore freely in the notebook ~  -->
 
 ## 🧐Tips
-Using [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), [SD-XL](https://replicate.com/stability-ai/sdxl/api) or [DALL·E](https://platform.openai.com/docs/guides/images?context=node), [TripoSR](https://github.com/VAST-AI-Research/TripoSR) as LMM was able to get the best results so far.
+<!-- Using [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), [SD-XL](https://replicate.com/stability-ai/sdxl/api) or [DALL·E](https://platform.openai.com/docs/guides/images?context=node), [TripoSR](https://github.com/VAST-AI-Research/TripoSR) as LMM was able to get the best results so far.
 The effects in the paper were obtained using [Zero123](https://github.com/cvlab-columbia/zero123), so they are inferior compared to [TripoSR](https://github.com/VAST-AI-Research/TripoSR).
 
-If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141) you can use [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary) or [LLaVA](https://github.com/haotian-liu/LLaVA), if you use LLaVA it is recommended to use the [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) model. Although we gave a pipeline built with [llava-v1.6-mistral-7b](https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf), it works poorly, while [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) can correctly fulfill user commands.
+If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141) you can use [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary) or [LLaVA](https://github.com/haotian-liu/LLaVA), if you use LLaVA it is recommended to use the [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) model. Although we gave a pipeline built with [llava-v1.6-mistral-7b](https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf), it works poorly, while [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) can correctly fulfill user commands. -->
 
 ## 🗓ToDO List
-✅1. Release offline version of Idea23D implementation (llava-1.6-34b, SD-XL, TripoSR)
+<!-- ✅1. Release offline version of Idea23D implementation (llava-1.6-34b, SD-XL, TripoSR)
 
 ✅2. Release online running version of Idea23D implementation (GPT4-V, SD-XL, TripoSR)
 
-🔘3. Release complete rendering script with 3d model input support. we have encountered an issue where we can't render vertex shaded objs, only objs with texture maps. if you know how to handle this please contact us. Will release the rendering part of the code after resolving this issue.
+✅3. Release complete rendering script with 3d model input support.
 
-🔘4. Components supported by release: Qwen-VL, Zero123, DALL-E, Wonder3D, Stable Zero123, Deepfloyd IF. The release date for the complete set of all components will be delayed due to ongoing follow-up work.
+✅4. Components supported by release: Qwen-VL, Zero123, DALL-E, Wonder3D, Stable Zero123, Deepfloyd IF. The release date for the complete set of all components will be delayed due to ongoing follow-up work. -->
 
-## 📜Cite
+## 📜Citations
 ```
 @article{chen2024idea23d,
   title={Idea-2-3D: Collaborative LMM Agents Enable 3D Model Generation from Interleaved Multimodal Inputs}, 
@@ -118,10 +141,10 @@ We have intensively borrow codes from the following repositories. Many thanks to
 [LLaVA](https://github.com/haotian-liu/LLaVA),
 [TripoSR](https://github.com/VAST-AI-Research/TripoSR),
 [Zero123](https://github.com/cvlab-columbia/zero123),
-[Stable Zero123](https://github.com/threestudio-project/threestudio?tab=readme-ov-file#stable-zero123),
 [Wonder3D](https://github.com/xxlong0/Wonder3D),
 [SD-XL](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl),
 [Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if)
+...
 
 ## ⭐️ Star History
 
