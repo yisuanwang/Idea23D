@@ -29,8 +29,7 @@
 ----
 
 ## ✨Introduction
-<!-- ![idea23d](./page/idea23d.gif) -->
-![idea23d](./page/overview11.jpg)
+![idea23d](./page/idea23d.gif)
 Based on the LMM we developed Idea23D, a multimodal iterative self-refinement system that enhances any T2I model for automatic 3D model design and generation, enabling various new image creation functionalities togther with better visual qualities while understanding high level multimodal inputs.
 
 
@@ -63,21 +62,21 @@ Based on the LMM we developed Idea23D, a multimodal iterative self-refinement sy
 [stable-fast-3d](https://huggingface.co/stabilityai/stable-fast-3d), 3DTopia, Hunyuan3D
 
 ## 🛠Run
-<!-- ❗If different modules are used, install the corresponding dependency packages.
+❗If different modules are used, install the corresponding dependency packages.
 
-The code we have given to run locally uses llava-1.6, SD-XL and TripoSR. so [requirements-local.txt](./requirements-local.txt) is following that.
+The code we have given to run locally uses GPT-4o, FLUX and InstantMesh. so [requirements-local.txt](./requirements-local.txt) is following that.
 
-It's driven by GPT4V, [SD-XL(replicate)](https://replicate.com/stability-ai/sdxl/api), and TripoSR if you're using colab for testing, it uses this [requirements-colab.txt](./requirements-colab.txt). -->
+It's driven by GPT-4o, [SD-XL(replicate)](https://replicate.com/stability-ai/sdxl/api), and TripoSR if you're using colab for testing, it uses this [requirements-colab.txt](./requirements-colab.txt).
 
 ### Colab
-<!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing) -->
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing)
 
 ### Offline
-<!-- ```
+```
 pip install -r requirements-local.txt
-``` -->
+```
 
-<!-- Then change the path to your path in the "Initialize LMM, T2I, I23D" section of ipynb.
+Then change the path to your path in the "Initialize LMM, T2I, I23D" section of ipynb.
 ```
 https://huggingface.co/llava-hf/llava-v1.6-34b-hf
 https://huggingface.co/stabilityai/TripoSR
@@ -104,22 +103,29 @@ log('loading i23d...')
 i23d = img23d_TripoSR(model_path = 'path_to_your/TripoSR' ,gpuid=2)
 log('loading finish.')
 ```
-open [Idea23D/idea23d_pipeline.ipynb](./idea23d_pipeline.ipynb), Explore freely in the notebook ~  -->
+open [Idea23D/idea23d_pipeline.ipynb](./idea23d_pipeline.ipynb), Explore freely in the notebook ~ 
+
+## Evaluation 
+### Prepare Data
+
+1. Download the required dataset `dataset` from [Hugging Face](https://huggingface.co/yisuanwang/Idea23D).
+2. Place the downloaded `dataset` folder in the path `Idea23D/dataset`.
+
+Ensure the directory structure matches the path settings in the code for smooth execution.
+
+
 
 ## 🧐Tips
-<!-- Using [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), [SD-XL](https://replicate.com/stability-ai/sdxl/api) or [DALL·E](https://platform.openai.com/docs/guides/images?context=node), [TripoSR](https://github.com/VAST-AI-Research/TripoSR) as LMM was able to get the best results so far.
+Using [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), [SD-XL](https://replicate.com/stability-ai/sdxl/api) or [DALL·E](https://platform.openai.com/docs/guides/images?context=node), [TripoSR](https://github.com/VAST-AI-Research/TripoSR) as LMM was able to get the best results so far.
 The effects in the paper were obtained using [Zero123](https://github.com/cvlab-columbia/zero123), so they are inferior compared to [TripoSR](https://github.com/VAST-AI-Research/TripoSR).
 
-If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141) you can use [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary) or [LLaVA](https://github.com/haotian-liu/LLaVA), if you use LLaVA it is recommended to use the [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) model. Although we gave a pipeline built with [llava-v1.6-mistral-7b](https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf), it works poorly, while [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) can correctly fulfill user commands. -->
+If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141) you can use [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary) or [LLaVA](https://github.com/haotian-liu/LLaVA), if you use LLaVA it is recommended to use the [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) model. Although we gave a pipeline built with [llava-v1.6-mistral-7b](https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf), it works poorly, while [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) can correctly fulfill user commands.
 
 ## 🗓ToDO List
-<!-- ✅1. Release offline version of Idea23D implementation (llava-1.6-34b, SD-XL, TripoSR)
+✅1. Release Code
 
-✅2. Release online running version of Idea23D implementation (GPT4-V, SD-XL, TripoSR)
+⚪2. Support for more models, such as SD3.5, CraftsMan3D, and more.
 
-✅3. Release complete rendering script with 3d model input support.
-
-✅4. Components supported by release: Qwen-VL, Zero123, DALL-E, Wonder3D, Stable Zero123, Deepfloyd IF. The release date for the complete set of all components will be delayed due to ongoing follow-up work. -->
 
 ## 📜Citations
 ```
