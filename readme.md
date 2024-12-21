@@ -112,10 +112,9 @@ python pipeline.py --lmm gpt4o --t2i flux --i23d instantmesh
 
 ```
 cd Idea23D
-pip install huggingface_hub hf-transfer
-export HF_HUB_ENABLE_HF_TRANSFER=1
-huggingface-cli download --resume-download --local-dir-use-symlinks False yisuanwang/Idea23D --local-dir ./local_repo
-mv -r ./local_repo/dataset ./dataset
+wget https://huggingface.co/yisuanwang/Idea23D/resolve/main/dataset.zip?download=true -o dataset.zip
+unzip dataset.zip
+rm dataset.zip
 ```
 Ensure the directory structure matches the path settings in the code for smooth execution.
 
