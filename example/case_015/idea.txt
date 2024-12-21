@@ -1,0 +1,1 @@
+This fish has a skin like the <OBJ>fish.obj</OBJ> watermelon in the picture <IMG>a_o_2.png</IMG>.

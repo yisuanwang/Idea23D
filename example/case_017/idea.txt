@@ -1,0 +1,1 @@
+This Pikachu sits on <OBJ>Pikachu.obj</OBJ> the Pokeball <OBJ>Pokeball.obj</OBJ> in its original position.

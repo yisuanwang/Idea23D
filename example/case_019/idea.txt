@@ -1,0 +1,1 @@
+Replace the ears of this rabbit <OBJ>rabbit.obj</OBJ> with this banana model <OBJ>banana.obj</OBJ>, keeping it in a sitting position.
