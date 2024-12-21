@@ -14,8 +14,10 @@
   </a>&ensp; -->
   <a href="https://idea23d.github.io/"><img src="https://img.shields.io/static/v1?label=Homepage&message=Idea23D&color=blue&logo=github-pages"></a> &ensp;
   <a href="https://github.com/yisuanwang/Idea23D"><img src="https://img.shields.io/github/stars/yisuanwang/Idea23D?label=stars&logo=github&color=brightgreen" alt="GitHub Repo Stars"></a> &ensp;
-  <a href="https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> &ensp;
+  <!-- <a href="https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> &ensp; -->
   <a href="https://arxiv.org/abs/2404.04363"><img src="https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square" alt="arXiv"></a> &ensp;
+   <a href="https://huggingface.co/yisuanwang/Idea23D"><img src="https://img.shields.io/static/v1?label=Dataset&message=HuggingFace&color=yellow"></a> &ensp;
+  <a href="https://idea23d.github.io"><img src="https://img.shields.io/static/v1?label=Demo&message=Gradio&color=yellow"></a> &ensp;
 </div>
 
 
@@ -62,64 +64,60 @@ Based on the LMM we developed Idea23D, a multimodal iterative self-refinement sy
 [stable-fast-3d](https://huggingface.co/stabilityai/stable-fast-3d), 3DTopia, Hunyuan3D
 
 ## 🛠Run
-❗If different modules are used, install the corresponding dependency packages.
+The Gradio demo is coming soon, and you can also clone this repo to your local machine and run pipeline.py.
+he main dependencies we use include: ```python 3.10, torch==2.2.2+cu118, torchvision==0.17.2+cu118, transformers==4.47.0, tokenizers==0.21.0, numpy==1.26.4, diffusers==0.31.0, rembg==2.0.60, openai==0.28.0```
+These are compatible with gpt4o, instantMesh, hunyuan3d, sdxl, InternVL2.5-78B, and llava-CoT-11B.
 
-The code we have given to run locally uses GPT-4o, FLUX and InstantMesh. so [requirements-local.txt](./requirements-local.txt) is following that.
-
-It's driven by GPT-4o, [SD-XL(replicate)](https://replicate.com/stability-ai/sdxl/api), and TripoSR if you're using colab for testing, it uses this [requirements-colab.txt](./requirements-colab.txt).
-
-### Colab
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing)
-
-### Offline
 ```
 pip install -r requirements-local.txt
 ```
-
-Then change the path to your path in the "Initialize LMM, T2I, I23D" section of ipynb.
+You can add new LMM, T2I, and I23D support components by modifying the content under tool/api. An example of generating a watermelon fish is provided in idea23d_pipeline.ipynb.
+Open [Idea23D/idea23d_pipeline.ipynb](./idea23d_pipeline.ipynb), Explore freely in the notebook ~ 
 ```
-https://huggingface.co/llava-hf/llava-v1.6-34b-hf
-https://huggingface.co/stabilityai/TripoSR
-https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0
-https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0
+from tool.api.I23Dapi import *
+from tool.api.LMMapi import *
+from tool.api.T2Iapi import *
+
+
+# Initialize LMM, T2I, I23D
+lmm = lmm_gpt4o(api_key = 'sk-xxx your openai api key')
+# lmm = lmm_InternVL2_5_78B(model_path='OpenGVLab/InternVL2_5-78B', gpuid=[0,1,2,3], load_in_8bit=True)
+# lmm = lmm_InternVL2_5_78B(model_path='OpenGVLab/InternVL2_5-78B', gpuid=[0,1,2,3], load_in_8bit=False)
+# lmm = lmm_InternVL2_8B(model_path = 'OpenGVLab/InternVL2-8B', gpuid=0)
+# lmm = lmm_llava_CoT_11B(model_path='Xkev/Llama-3.2V-11B-cot',gpuid=1)
+# lmm = lmm_qwen2vl_7b(model_path='Qwen/Qwen2-VL-7B-Instruct', gpuid=1)
+
+
+
+# t2i = text2img_sdxl_replicate(replicate_key='your api key')
+# t2i = t2i_sdxl(sdxl_base_path='stabilityai/stable-diffusion-xl-base-1.0', sdxl_refiner_path='stabilityai/stable-diffusion-xl-refiner-1.0', gpuid=6)
+t2i = t2i_flux(model_path='black-forest-labs/FLUX.1-dev', gpuid=2)
+
+
+# i23d = i23d_TripoSR(model_path = 'stabilityai/TripoSR' ,gpuid=7)
+i23d = i23d_InstantMesh(gpuid=3)
+# i23d = i23d_Hunyuan3D(mv23d_cfg_path="Hunyuan3D-1/svrm/configs/svrm.yaml",
+#         mv23d_ckt_path="weights/svrm/svrm.safetensors",
+#         text2image_path="weights/hunyuanDiT")
+```
+If you want to test on the dataset, simply run the pipeline.py script, for example:
+```
+python pipeline.py --lmm gpt4o --t2i flux --i23d instantmesh
 ```
 
-This section in [ipynb](./idea23d_pipeline.ipynb):
-```
-# init LMM,T2I,I23D
-log('loading lmm...')
-
-# lmm = lmm_gpt4v('sk-your open ai key')
-lmm = lmm_llava_34b(model_path = "path_to_your/llava-v1.6-34b-hf", gpuid = 5)
-# lmm = lmm_llava_7b(model_path = "path_to_your/llava-v1.6-mistral-7b-hf", gpuid = 2)
-
-log('loading t2i...')
-# t2i = text2img_sdxl_replicate(replicate_key='r8_ZCtxxxxxxxxxxxxxx')
-t2i = text2img_sdxl(sdxl_base_path='path_to_your/stable-diffusion-xl-base-1.0', 
-                    sdxl_refiner_path='path_to_your/stable-diffusion-xl-refiner-1.0', 
-                    gpuid=2)
-
-log('loading i23d...')
-i23d = img23d_TripoSR(model_path = 'path_to_your/TripoSR' ,gpuid=2)
-log('loading finish.')
-```
-open [Idea23D/idea23d_pipeline.ipynb](./idea23d_pipeline.ipynb), Explore freely in the notebook ~ 
-
-## Evaluation 
-### Prepare Data
+## Evaluation dataset
 
 1. Download the required dataset `dataset` from [Hugging Face](https://huggingface.co/yisuanwang/Idea23D).
 2. Place the downloaded `dataset` folder in the path `Idea23D/dataset`.
 
+```
+cd Idea23D
+pip install huggingface_hub hf-transfer
+export HF_HUB_ENABLE_HF_TRANSFER=1
+huggingface-cli download --resume-download --local-dir-use-symlinks False yisuanwang/Idea23D --local-dir dataset
+```
 Ensure the directory structure matches the path settings in the code for smooth execution.
 
-
-
-## 🧐Tips
-Using [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), [SD-XL](https://replicate.com/stability-ai/sdxl/api) or [DALL·E](https://platform.openai.com/docs/guides/images?context=node), [TripoSR](https://github.com/VAST-AI-Research/TripoSR) as LMM was able to get the best results so far.
-The effects in the paper were obtained using [Zero123](https://github.com/cvlab-columbia/zero123), so they are inferior compared to [TripoSR](https://github.com/VAST-AI-Research/TripoSR).
-
-If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141) you can use [Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary) or [LLaVA](https://github.com/haotian-liu/LLaVA), if you use LLaVA it is recommended to use the [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) model. Although we gave a pipeline built with [llava-v1.6-mistral-7b](https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf), it works poorly, while [llava-v1.6-34b](https://huggingface.co/llava-hf/llava-v1.6-34b-hf) can correctly fulfill user commands.
 
 ## 🗓ToDO List
 ✅1. Release Code
@@ -143,14 +141,26 @@ If you don't have access to [GPT4V](https://community.openai.com/t/how-can-i-get
 ## 🧰Acknowledgement
 We have intensively borrow codes from the following repositories. Many thanks to the authors for sharing their codes.
 
-[Qwen-VL](https://modelscope.cn/studios/qwen/Qwen-VL-Max/summary),
-[LLaVA](https://github.com/haotian-liu/LLaVA),
-[TripoSR](https://github.com/VAST-AI-Research/TripoSR),
-[Zero123](https://github.com/cvlab-columbia/zero123),
+[llava-v1.6-34b](https://github.com/haotian-liu/LLaVA),
+[llava-v1.6-mistral-7b](https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b), 
+[llava-CoT-11B](https://github.com/PKU-YuanGroup/LLaVA-CoT),
+[InternVL2.5-78B](https://huggingface.co/OpenGVLab/InternVL2_5-78B),
+[Qwen-VL2-8B](https://github.com/QwenLM/Qwen2-VL), 
+[llava-CoT-11B](https://huggingface.co/Xkev/Llama-3.2V-11B-cot),
+[llama-3.2V-11B](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision), 
+[intern-VL2-8B](https://huggingface.co/OpenGVLab/InternVL2-8B),
+[SD-XL 1.0 base+refiner](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl), 
+[DALL·E](https://platform.openai.com/docs/guides/images?context=node), 
+[Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if),
+[FLUX.1.dev](https://huggingface.co/black-forest-labs/FLUX.1-dev),
+[TripoSR](https://github.com/VAST-AI-Research/TripoSR), 
+[Zero123](https://github.com/cvlab-columbia/zero123), 
 [Wonder3D](https://github.com/xxlong0/Wonder3D),
-[SD-XL](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl),
-[Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if)
-...
+[InstantMesh](https://github.com/TencentARC/InstantMesh), 
+[LGM](https://github.com/3DTopia/LGM), 
+[Hunyuan3D](https://github.com/Tencent/Hunyuan3D-1), 
+[stable-fast-3d](https://huggingface.co/stabilityai/stable-fast-3d),
+
 
 ## ⭐️ Star History
 
