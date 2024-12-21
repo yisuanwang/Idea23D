@@ -36,7 +36,7 @@ Based on the LMM we developed Idea23D, a multimodal iterative self-refinement sy
 
 
 ## 📔Compatibility:
-- LMM Agent:
+- LMM:
 [OpenAI GPT-4V](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), 
 [OpenAI GPT-4o](https://community.openai.com/t/how-can-i-get-a-gpt4-api-key/379141), 
 [llava-v1.6-34b](https://github.com/haotian-liu/LLaVA),
@@ -48,13 +48,13 @@ Based on the LMM we developed Idea23D, a multimodal iterative self-refinement sy
 [llama-3.2V-11B](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision), 
 [intern-VL2-8B](https://huggingface.co/OpenGVLab/InternVL2-8B),
 
-- Text-2-Image Agent: 
+- Text-2-Image: 
 [SD-XL 1.0 base+refiner](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl), 
 [DALL·E](https://platform.openai.com/docs/guides/images?context=node), 
 [Deepfloyd IF](https://huggingface.co/docs/diffusers/en/api/pipelines/deepfloyd_if),
 [FLUX.1.dev](https://huggingface.co/black-forest-labs/FLUX.1-dev),
 
-- Image-2-3D Agent: 
+- Image-2-3D: 
 [TripoSR](https://github.com/VAST-AI-Research/TripoSR), 
 [Zero123](https://github.com/cvlab-columbia/zero123), 
 [Wonder3D](https://github.com/xxlong0/Wonder3D),
@@ -114,7 +114,8 @@ python pipeline.py --lmm gpt4o --t2i flux --i23d instantmesh
 cd Idea23D
 pip install huggingface_hub hf-transfer
 export HF_HUB_ENABLE_HF_TRANSFER=1
-huggingface-cli download --resume-download --local-dir-use-symlinks False yisuanwang/Idea23D --local-dir dataset
+huggingface-cli download --resume-download --local-dir-use-symlinks False yisuanwang/Idea23D --local-dir ./local_repo
+mv -r ./local_repo/dataset ./dataset
 ```
 Ensure the directory structure matches the path settings in the code for smooth execution.
 
