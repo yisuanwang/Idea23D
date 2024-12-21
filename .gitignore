@@ -34,7 +34,7 @@ pipeline-ablation-wo-memory.py
 pipeline-ablation-wo-prevmodel.py
 pipeline-llavacot.py
 
-render
+/render
 tool-bak
 
 allfiles.txt
