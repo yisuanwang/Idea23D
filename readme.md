@@ -112,11 +112,12 @@ python pipeline.py --lmm gpt4o --t2i flux --i23d instantmesh
 
 ```
 cd Idea23D
-wget https://huggingface.co/yisuanwang/Idea23D/resolve/main/dataset.zip?download=true -o dataset.zip
+wget https://huggingface.co/yisuanwang/Idea23D/resolve/main/dataset.zip?download=true -O dataset.zip
 unzip dataset.zip
 rm dataset.zip
 ```
 Ensure the directory structure matches the path settings in the code for smooth execution.
+
 
 
 ## 🗓ToDO List
