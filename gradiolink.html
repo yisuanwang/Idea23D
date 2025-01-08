@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradio Demo Redirect</title>
+</head>
+<body>
+    <h1>Welcome to Idea23D Gradio Demo</h1>
+    <p>If you are not redirected automatically, <a href="https://f8282b2dddde73fd5d.gradio.liv" id="gradio-link">click here</a>.</p>
+
+    <script>
+        // JavaScript for automatic redirect
+        window.onload = function () {
+            const gradioLink = document.getElementById('gradio-link').href;
+            setTimeout(() => {
+                window.location.href = gradioLink;
+            }, 3000); // Redirect after 3 seconds
+        };
+    </script>
+</body>
+</html>

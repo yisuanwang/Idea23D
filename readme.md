@@ -17,7 +17,7 @@
   <!-- <a href="https://colab.research.google.com/drive/1u_lJRvxIlBUPjC_Lou57SWLEnc5vLgQ6?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> &ensp; -->
   <a href="https://arxiv.org/abs/2404.04363"><img src="https://img.shields.io/badge/arXiv-2404.04363-b31b1b.svg?style=flat-square" alt="arXiv"></a> &ensp;
    <a href="https://huggingface.co/yisuanwang/Idea23D"><img src="https://img.shields.io/static/v1?label=Dataset&message=HuggingFace&color=yellow"></a> &ensp;
-  <a href="https://idea23d.github.io"><img src="https://img.shields.io/static/v1?label=Demo&message=Gradio&color=yellow"></a> &ensp;
+  <a href="https://yisuanwang.github.io/Idea23D/gradiolink.html"><img src="https://img.shields.io/static/v1?label=Demo&message=Gradio&color=yellow"></a> &ensp;
 </div>
 
 
