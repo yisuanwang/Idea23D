@@ -8,6 +8,8 @@
 
 2024.11: 🎉 Idea-2-3D has been accepted by COLING 2025! 🎉 See you in Abu Dhabi, UAE, from January 19 to 24, 2025!
 
+2025.01: gradio demo is available at https://3389f4ca9cd69aae21.gradio.live
+
 <div align="left">
   <!-- <a href='https://idea23d.github.io/'>
     <img src='https://img.shields.io/badge/Project-Page-green' alt="Project Page">
